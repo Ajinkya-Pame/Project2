@@ -1,7 +1,7 @@
 // tests/register.test.js
 
 const request = require('supertest');
-const app = require('../backend/server'); // Adjust the path to your main Express app file
+const app = require('/server'); // Adjust the path to your main Express app file
 const mongoose = require('mongoose');
 
 describe('POST /api/auth/register', () => {
