@@ -1,8 +1,11 @@
 jest.mock('passport-google-oauth20', () => {
   return {
-    Strategy: jest.fn((options, verify) => {
+    Strategy: jest.fn(function Strategy(options, verify) {
+      // The 'this' context refers to the strategy instance
+      this.name = 'google'; // Set a name for the strategy
+
       // Mock the verify callback
-      verify(null, { id: 'mock_id', displayName: 'Mock User' });
+      this.verify = verify;
     }),
   };
 });
