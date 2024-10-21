@@ -1,3 +1,12 @@
+jest.mock('passport-google-oauth20', () => {
+  return {
+    Strategy: jest.fn((options, verify) => {
+      // Mock the verify callback
+      verify(null, { id: 'mock_id', displayName: 'Mock User' });
+    }),
+  };
+});
+
 const request = require('supertest');
 const app = require('../server'); // Adjust the path according to your project structure
 
