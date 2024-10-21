@@ -1,7 +1,3 @@
-// jest.config.js
 module.exports = {
-  testMatch: [
-    "/tests/*.[jt]s?(x)"
-  ],
-  // You can add other configurations if needed
+  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
 };
